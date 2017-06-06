@@ -8,6 +8,8 @@ public class GameMng : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        AndroidNFCReader.enableBackgroundScan();
+        AndroidNFCReader.ScanNFC(gameObject.name, "OnFinishScan");
     }
 	
 	// Update is called once per frame
@@ -19,4 +21,23 @@ public class GameMng : MonoBehaviour {
         }
 
     }
+
+    //Nfc callback
+    void OnFinishScan(string result) {
+        if (result == AndroidNFCReader.CANCELLED)
+        {
+            // The user has canceled the scan (back button)
+        }
+        else if (result == AndroidNFCReader.ERROR)
+        {
+            // There was an error reading the NFC tag
+        }
+        else if (result == AndroidNFCReader.NO_HARDWARE)
+        {
+            // No NFC hardware available
+        }
+
+        Debug.Log("AndroidNFCReader called");
+    }
 }
+
