@@ -37,5 +37,11 @@ public class FadeMng : MonoBehaviour
         // MeshRendererからMaterialにアクセスし、Materialをセットする
         var renderer = GetComponent<MeshRenderer>();
         renderer.material = _mat;
+		fadeIn (renderer);
     }
+
+	void fadeIn(MeshRenderer renderer){
+		renderer.material.color = new Color (0, 0, 0, 0.5f);
+		Debug.Log("change alpha");
+	}
 }

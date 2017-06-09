@@ -10,7 +10,7 @@ public class StartButton : MonoBehaviour {
     GameObject fade = (GameObject)Resources.Load("Prefabs/Fade");
     Instantiate(fade);
 
-    //SceneManager.LoadScene("scene/main");
+    SceneManager.LoadScene("Scene/main");
         
     }
 }

@@ -14,6 +14,8 @@ public class GameMng : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
         if (Input.GetMouseButtonDown(0))
         {
             GameObject splash = (GameObject)Resources.Load("Prefabs/Splash");
